@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,7 +6,11 @@
     list-style: none;
 }
 
-html{
+body {
+    background-color: black;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -37,12 +41,34 @@ html{
     text-decoration-thickness: 3px;
 }
 
-main{
+main {
     height: calc(100vh - 80px);
     width: 100%;
     background-color: rgb(0, 0, 0);
     background-image: url(img/Diseño\ sin\ título.org.png);
     background-size: cover;
+}
+
+@media only screen and (max-width:480px) {
+    main {
+        background-position: 50px 25px;
+        background-position: 20% 10%;
+        background-position: left top;
+        background-position: left center;
+        background-position: center center;
+        height: 514px;
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    main {
+        background-position: 50px 25px;
+        background-position: 20% 10%;
+        background-position: left top;
+        background-position: left center;
+        background-position: center center;
+        height: 514px;
+    }
 }
 
 .sec2 {
@@ -51,22 +77,9 @@ main{
     background-color: black;
 }
 
-h2{
-    text-align: center;
-    text-transform: uppercase;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: rgb(153, 31, 209);
-    padding: 15px;
-}
-
-section{
-    height: 700px;
-    width: 100%;
-}
-
 /* configuraciòn de textos*/
 
-h1{
+h1 {
     text-align: center;
     text-transform: uppercase;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -147,7 +160,6 @@ p1 {
     background-color: rgb(64, 64, 65);
 }
 
-
 .header-img {
     background-position: right;
 }
@@ -188,6 +200,26 @@ p1 {
     flex: 0 0 calc(50% - 1rem);
 }
 
+@media only screen and (max-width:480px) {
+    .img {
+        display: none;
+    }
+
+    .imagen-biografía {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:1300px) {
+    .img {
+        display: none;
+    }
+
+    .imagen-biografía {
+        display: none;
+    }
+}
+
 /* Css de la Galería de fotos */
 
 /*shows*/
@@ -205,6 +237,33 @@ p1 {
     padding: 15px;
 }
 
+@media only screen and (max-width:480px) {
+    .galeria-shows {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img1 img2"
+            "img1 img5"
+            "img3 img3"
+            "img4 img6"
+            "img4 img7"
+            "img8 img8";
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:780px) {
+    .galeria-shows {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img1 img2"
+            "img1 img5"
+            "img3 img3"
+            "img4 img6"
+            "img4 img7"
+            "img8 img8";
+    }
+}
 
 .item {
     border: 2px solid black;
@@ -269,6 +328,34 @@ p1 {
     padding: 15px;
 }
 
+@media only screen and (max-width:480px) {
+    .galeria-videoclips {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img9 img9"
+            "img10 img11"
+            "img13 img12"
+            "img13 img14"
+            "img15 img16"
+            "img17 img17"
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:780px) {
+    .galeria-videoclips {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img9 img9"
+            "img10 img11"
+            "img13 img12"
+            "img13 img14"
+            "img15 img16"
+            "img17 img17"
+    }
+}
+
 .item9 {
     background-image: url(./img/vidddeoclip.jpg);
     grid-area: img9;
@@ -330,6 +417,34 @@ p1 {
     padding: 15px;
 }
 
+@media only screen and (max-width:480px) {
+    .galeria-backstages {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img18 img19"
+            "img20 img21"
+            "img22 img23"
+            "img22 img26"
+            "img24 img26"
+            "img25 img25";
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:780px) {
+    .galeria-backstages {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img18 img19"
+            "img20 img21"
+            "img22 img23"
+            "img22 img26"
+            "img24 img26"
+            "img25 img25";
+    }
+}
+
 .item18 {
     background-image: url(./img/back.webp);
     grid-area: img18;
@@ -387,11 +502,35 @@ p1 {
     gap: 20px;
 }
 
+@media (max-width: 480px) {
+    .contenedor-álbumes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .contenedor-álbumes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
 .contenedor-EP {
     margin-top: 20px;
     margin-bottom: 40px;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+@media (max-width: 480px) {
+    .contenedor-EP {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .contenedor-EP {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .contenedor-sencillos {
@@ -404,6 +543,18 @@ p1 {
     gap: 20px;
 }
 
+@media (max-width: 480px) {
+    .contenedor-sencillos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .contenedor-sencillos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .contenedor-colaboraciones {
     margin-top: 20px;
     margin-bottom: 40px;
@@ -412,6 +563,18 @@ p1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+@media (max-width: 480px) {
+    .contenedor-colaboraciones {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .contenedor-colaboraciones {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* css de la tienda */
@@ -426,6 +589,18 @@ p1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+@media (max-width: 480px) {
+    .container-items {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .container-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .item {
@@ -516,6 +691,50 @@ label {
     border-radius: 25px;
 }
 
+@media only screen and (max-width:480px) {
+    .img {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        width: auto;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .submit {
+        font-size: 15px;
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:1009px) {
+    .img {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        width: auto;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .submit {
+        font-size: 15px;
+        width: 150px;
+    }
+}
+
 /* boton subir */
 .subir {
     height: 40px;
@@ -545,8 +764,21 @@ footer {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@media only screen and (max-width:480px) {
+    .footer {
+        font-size: 10px;
+    }
+}
+
 .redes {
     color: rgb(153, 31, 209);
     font-size: 40px;
     letter-spacing: 10px;
+}
+
+@media only screen and (max-width:480px) {
+    .redes {
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
 }
