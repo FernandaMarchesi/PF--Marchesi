@@ -112,18 +112,6 @@ main {
 }
 
 /* configuraciòn de textos*/
-@mixin font1 {
-    text-align: center;
-    font-family: $fontprincipal;
-    color: $color1
-}
-
-@mixin font2 {
-    text-align: center;
-    font-family: $fontprincipal;
-    color: $color4
-}
-
 h1 {
     text-align: center;
     text-transform: uppercase;
@@ -135,57 +123,66 @@ h1 {
 }
 
 h2 {
-    @include font1;
+    text-align: center;
     text-decoration: underline;
     text-transform: uppercase;
     font-size: 29px;
-    text-shadow: $color4;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(153, 31, 209);
+    text-shadow: #fff;
 }
 
 h3 {
-    @include font2;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
     text-decoration: underline;
 }
 
 h4 {
-    @include font2;
-    font-size: $font-size2;
-    background-color: $color2;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(20, 20, 20);
 }
 
 h5 {
     font-size: 30px;
-    font-family: $font2;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
-    color: $color4;
+    color: #fff;
     text-decoration: underline;
     padding-top: 15px;
 }
 
 h6 {
-    @include font1();
     font-size: 22px;
-    color: $color4;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(153, 31, 209);
     margin-top: 25px;
 }
 
 p {
-    text-align: left;
-    font-family: $fontprincipal;
-    color: $color4;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
+    color: #fff;
     font-size: 16px;
 }
 
 p1 {
-    @include font2;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    font-size: $font-size2;
+    color: #fff;
+    font-size: 12px;
 }
 
 hr {
     border: none;
-    border-top: 3px solid $color1;
+    border-top: 3px solid rgb(153, 31, 209);
     margin: 10px;
 }
 
@@ -276,348 +273,6 @@ hr {
 @media only screen and (min-width:480px) and (max-width:686px) {
     @include bio;
 }
-
-/* Css de la Galería de fotos */
-
-/*shows*/
-.galeria-shows {
-    display: grid;
-    height: 1030px;
-    width: 100%;
-    grid-template-columns: repeat(4, 1fr);
-    background-color: black;
-    grid-template-rows: repeat(3, 325px);
-    grid-template-areas: "img1 img2 img3 img3"
-        "img1 img4 img5 img6"
-        "img7 img4 img8 img8";
-    grid-gap: 10px;
-    padding: 15px;
-}
-
-@media only screen and (max-width:480px) {
-    .galeria-shows {
-        height: 1260px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 200px);
-        grid-template-areas: "img1 img2"
-            "img1 img5"
-            "img3 img3"
-            "img4 img6"
-            "img4 img7"
-            "img8 img8";
-    }
-}
-
-@media only screen and (min-width:480px) and (max-width:780px) {
-    .galeria-shows {
-        height: 1260px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 200px);
-        grid-template-areas: "img1 img2"
-            "img1 img5"
-            "img3 img3"
-            "img4 img6"
-            "img4 img7"
-            "img8 img8";
-    }
-}
-
-.item {
-    border: 2px solid black;
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-}
-
-.item1 {
-    background-image: url(./img/shhows.jpg);
-    grid-area: img1;
-}
-
-.item2 {
-    background-image: url(./img/shows.jpg);
-    grid-area: img2;
-}
-
-.item3 {
-    background-image: url(./img/show.jpg);
-    grid-area: img3;
-}
-
-.item4 {
-    background-image: url(./img/showss.jpg);
-    grid-area: img4;
-}
-
-.item5 {
-    background-image: url(./img/showimg.jpg);
-    grid-area: img5;
-}
-
-.item6 {
-    background-image: url(./img/showwws.jpg);
-    grid-area: img6;
-}
-
-.item7 {
-    background-image: url(./img/showwss.webp);
-    grid-area: img7;
-}
-
-.item8 {
-    background-image: url(./img/showdef.jpg);
-    grid-area: img8;
-}
-
-/*videoclips*/
-
-.galeria-videoclips {
-    height: 1030px;
-    width: 100%;
-    display: grid;
-    background-color: black;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 325px);
-    grid-template-areas: "img9 img9 img10 img11"
-        "img12 img13 img14 img15"
-        "img16 img13 img17 img17";
-    grid-gap: 10px;
-    padding: 15px;
-}
-
-@media only screen and (max-width:480px) {
-    .galeria-videoclips {
-        height: 1260px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 200px);
-        grid-template-areas: "img9 img9"
-            "img10 img11"
-            "img13 img12"
-            "img13 img14"
-            "img15 img16"
-            "img17 img17"
-    }
-}
-
-@media only screen and (min-width:480px) and (max-width:780px) {
-    .galeria-videoclips {
-        height: 1260px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 200px);
-        grid-template-areas: "img9 img9"
-            "img10 img11"
-            "img13 img12"
-            "img13 img14"
-            "img15 img16"
-            "img17 img17"
-    }
-}
-
-.item9 {
-    background-image: url(./img/vidddeoclip.jpg);
-    grid-area: img9;
-}
-
-.item10 {
-    background-image: url(./img/viideocliip.jpg);
-    grid-area: img10;
-}
-
-.item11 {
-    background-image: url(./img/vvideoclip.jpg);
-    grid-area: img11;
-}
-
-.item12 {
-    background-image: url(./img/viiddeeoocclip.jpg);
-    grid-area: img12;
-}
-
-.item13 {
-    background-image: url(./img/videoclip.jpg);
-    grid-area: img13;
-}
-
-.item14 {
-    background-image: url(./img/viiddeeoclip.jpg);
-    grid-area: img14;
-}
-
-.item15 {
-    background-image: url(./img/videooclip.jpg);
-    grid-area: img15;
-}
-
-.item16 {
-    background-image: url(./img/videooooclip\ \(2\).jpg);
-    grid-area: img16;
-}
-
-.item17 {
-    background-image: url(./img/videooooclip\ \(1\).jpg);
-    grid-area: img17;
-}
-
-/*backstage*/
-
-.galeria-backstages {
-    height: 1030px;
-    width: 100%;
-    display: grid;
-    background-color: black;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 325px);
-    grid-template-areas: "img18 img19 img20 img21"
-        "img22 img23 img24 img26"
-        "img22 img25 img25 img26";
-    grid-gap: 10px;
-    padding: 15px;
-}
-
-@media only screen and (max-width:480px) {
-    .galeria-backstages {
-        height: 1260px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 200px);
-        grid-template-areas: "img18 img19"
-            "img20 img21"
-            "img22 img23"
-            "img22 img26"
-            "img24 img26"
-            "img25 img25";
-    }
-}
-
-@media only screen and (min-width:480px) and (max-width:780px) {
-    .galeria-backstages {
-        height: 1260px;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 200px);
-        grid-template-areas: "img18 img19"
-            "img20 img21"
-            "img22 img23"
-            "img22 img26"
-            "img24 img26"
-            "img25 img25";
-    }
-}
-
-.item18 {
-    background-image: url(./img/back.webp);
-    grid-area: img18;
-}
-
-.item19 {
-    background-image: url(./img/bbback.webp);
-    grid-area: img19;
-}
-
-.item20 {
-    background-image: url(./img/baccck.jpg);
-    grid-area: img20;
-}
-
-.item21 {
-    background-image: url(./img/bacck.jpg);
-    grid-area: img21;
-}
-
-.item22 {
-    background-image: url(./img/bac.jpg);
-    grid-area: img22;
-}
-
-.item23 {
-    background-image: url(./img/backk.jpg);
-    grid-area: img23;
-}
-
-.item24 {
-    background-image: url(./img/backkk.jpg);
-    grid-area: img24;
-}
-
-.item25 {
-    background-image: url(./img/bback.jpg);
-    grid-area: img25;
-}
-
-.item26 {
-    background-image: url(./img/backkkk.jpg);
-    grid-area: img26;
-}
-
-/*css de discografía*/
-
-@mixin music {
-    margin-top: $margin-top1;
-    margin-bottom: $margin-bottom2;
-    margin-left: $margin-left1;
-    margin-right: $margin-right1;
-}
-
-.contenedor-álbumes {
-    @include music;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-@media (max-width: 480px) {
-    .contenedor-álbumes {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media only screen and (min-width:480px) and (max-width:768px) {
-    .contenedor-álbumes {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-.contenedor-EP {
-    @include music;
-}
-
-@media (max-width: 480px) {
-    .contenedor-EP {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media only screen and (min-width:480px) and (max-width:768px) {
-    .contenedor-EP {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-.contenedor-sencillos,
-.contenedor-colaboraciones,
-.contenedor-freestyle {
-    @include music;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-@media (max-width: 480px) {
-
-    .contenedor-sencillos,
-    .contenedor-colaboraciones,
-    .contenedor-freestyle {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-@media only screen and (min-width:480px) and (max-width:768px) {
-
-    .contenedor-sencillos,
-    .contenedor-colaboraciones,
-    .contenedor-freestyle {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 
 /* css de la tienda */
 .tienda {
@@ -810,3 +465,6 @@ footer {
         letter-spacing: 5px;
     }
 }
+
+@import "_galeria";
+@import "discografia";

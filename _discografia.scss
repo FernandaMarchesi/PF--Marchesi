@@ -1,0 +1,72 @@
+/*css de discografía*/
+
+@mixin music {
+    margin-top: $margin-top1;
+    margin-bottom: $margin-bottom2;
+    margin-left: $margin-left1;
+    margin-right: $margin-right1;
+}
+
+.contenedor-álbumes {
+    @include music;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 480px) {
+    .contenedor-álbumes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .contenedor-álbumes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.contenedor-EP {
+    @include music;
+}
+
+@media (max-width: 480px) {
+    .contenedor-EP {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .contenedor-EP {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.contenedor-sencillos,
+.contenedor-colaboraciones,
+.contenedor-freestyle {
+    @include music;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+@media (max-width: 480px) {
+
+    .contenedor-sencillos,
+    .contenedor-colaboraciones,
+    .contenedor-freestyle {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+
+    .contenedor-sencillos,
+    .contenedor-colaboraciones,
+    .contenedor-freestyle {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+

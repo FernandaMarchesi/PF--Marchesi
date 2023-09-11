@@ -1,0 +1,258 @@
+/* Css de la Galería de fotos */
+
+/*shows*/
+.galeria-shows {
+    display: grid;
+    height: $height1;
+    width: $width1;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: $color3;
+    grid-template-rows: repeat(3, 325px);
+    grid-template-areas: "img1 img2 img3 img3"
+        "img1 img4 img5 img6"
+        "img7 img4 img8 img8";
+    grid-gap: 10px;
+    padding: 15px;
+}
+
+@mixin galeria {
+    height: 1260px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 200px);
+    grid-template-areas: "img1 img2"
+        "img1 img5"
+        "img3 img3"
+        "img4 img6"
+        "img4 img7"
+        "img8 img8";
+}
+
+@media only screen and (max-width:480px) {
+    .galeria-shows {
+        @include galeria;
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:780px) {
+    .galeria-shows {
+        @include galeria;
+    }
+}
+
+.item {
+    border: 2px solid $color3;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;}
+
+.item1 {
+    background-image: url(./img/shhows.jpg);
+    grid-area: img1;
+}
+
+.item2 {
+    background-image: url(./img/shows.jpg);
+    grid-area: img2;
+}
+
+.item3 {
+    background-image: url(./img/show.jpg);
+    grid-area: img3;
+}
+
+.item4 {
+    background-image: url(./img/showss.jpg);
+    grid-area: img4;
+}
+
+.item5 {
+    background-image: url(./img/showimg.jpg);
+    grid-area: img5;
+}
+
+.item6 {
+    background-image: url(./img/showwws.jpg);
+    grid-area: img6;
+}
+
+.item7 {
+    background-image: url(./img/showwss.webp);
+    grid-area: img7;
+}
+
+.item8 {
+    background-image: url(./img/showdef.jpg);
+    grid-area: img8;
+}
+
+/*videoclips*/
+
+.galeria-videoclips {
+        height: $height1;
+        width: $width1;
+        display: grid;
+        background-color: $color3;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 325px);
+        grid-template-areas: "img9 img9 img10 img11"
+            "img12 img13 img14 img15"
+            "img16 img13 img17 img17";
+        grid-gap: 10px;
+        padding: 15px;
+    }
+    
+    @mixin video {
+        height: $height2;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img9 img9"
+            "img10 img11"
+            "img13 img12"
+            "img13 img14"
+            "img15 img16"
+            "img17 img17"
+    }
+    
+    
+    @media only screen and (max-width:480px) {
+        .galeria-videoclips {
+            @include video;
+        }
+    }
+    
+    @media only screen and (min-width:480px) and (max-width:780px) {
+        .galeria-videoclips {
+            @include video;
+            ;
+        }
+    }
+
+.item9 {
+    background-image: url(./img/vidddeoclip.jpg);
+    grid-area: img9;
+}
+
+.item10 {
+    background-image: url(./img/viideocliip.jpg);
+    grid-area: img10;
+}
+
+.item11 {
+    background-image: url(./img/vvideoclip.jpg);
+    grid-area: img11;
+}
+
+.item12 {
+    background-image: url(./img/viiddeeoocclip.jpg);
+    grid-area: img12;
+}
+
+.item13 {
+    background-image: url(./img/videoclip.jpg);
+    grid-area: img13;
+}
+
+.item14 {
+    background-image: url(./img/viiddeeoclip.jpg);
+    grid-area: img14;
+}
+
+.item15 {
+    background-image: url(./img/videooclip.jpg);
+    grid-area: img15;
+}
+
+.item16 {
+    background-image: url(./img/videooooclip\ \(2\).jpg);
+    grid-area: img16;
+}
+
+.item17 {
+    background-image: url(./img/videooooclip\ \(1\).jpg);
+    grid-area: img17;
+}
+
+/*backstage*/
+
+.galeria-backstages {
+    height: $height1;
+    width: $width1;
+    display: grid;
+    background-color: $color3;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 325px);
+    grid-template-areas: "img18 img19 img20 img21"
+        "img22 img23 img24 img26"
+        "img22 img25 img25 img26";
+    grid-gap: 10px;
+    padding: 15px;
+}
+
+@mixin back{
+            height: $height2;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img18 img19"
+            "img20 img21"
+            "img22 img23"
+            "img22 img26"
+            "img24 img26"
+            "img25 img25";
+}
+
+@media only screen and (max-width:480px) {
+    .galeria-backstages {
+        @include back;
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:780px) {
+    .galeria-backstages {
+        @include back;
+    }
+}
+
+.item18 {
+    background-image: url(./img/back.webp);
+    grid-area: img18;
+}
+
+.item19 {
+    background-image: url(./img/bbback.webp);
+    grid-area: img19;
+}
+
+.item20 {
+    background-image: url(./img/baccck.jpg);
+    grid-area: img20;
+}
+
+.item21 {
+    background-image: url(./img/bacck.jpg);
+    grid-area: img21;
+}
+
+.item22 {
+    background-image: url(./img/bac.jpg);
+    grid-area: img22;
+}
+
+.item23 {
+    background-image: url(./img/backk.jpg);
+    grid-area: img23;
+}
+
+.item24 {
+    background-image: url(./img/backkk.jpg);
+    grid-area: img24;
+}
+
+.item25 {
+    background-image: url(./img/bback.jpg);
+    grid-area: img25;
+}
+
+.item26 {
+    background-image: url(./img/backkkk.jpg);
+    grid-area: img26;
+}
