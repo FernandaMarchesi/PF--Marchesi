@@ -1,0 +1,812 @@
+/*color de letras*/
+$color1: rgb(153, 31, 209);
+$color2: rgb(20, 20, 20);
+$color3: black;
+$color4: white;
+$color5: rgb(90, 23, 121);
+$color6: rgb(64, 64, 65);
+$color7: rgb(25, 0, 36);
+
+/*font-family*/
+$fontprincipal: verdana;
+$font2:Georgia,
+'Times New Roman',
+Times,
+serif;
+
+/*font-size*/
+$font-size1: 20px;
+$font-size2: 12px;
+
+/*margin*/
+$margin-top1: 20px;
+$margin-top2: 50px;
+$margin-bottom1: 30px;
+$margin-bottom2: 40px;
+$margin-left1: 10px;
+$margin-left2: 6px;
+$margin-left3: 25px;
+$margin-right1: 10px;
+$margin-right2: 6px;
+$margin-right3: 25px;
+
+/*width*/
+$width1: 100%;
+
+/*height*/
+$height1: 1030px;
+$height2: 1260px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: $color3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-family: $fontprincipal;
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+    img {
+        width: 38px;
+    }
+}
+
+.navbar-toggler {
+    border: none;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.nav-item:hover {
+    color: $color1;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+}
+
+/*css del inicio*/
+
+main {
+    height: calc(100vh - 80px);
+    width: $width1;
+    background-color: $color3;
+    background-image: url(img/Diseño\ sin\ título.org.png);
+    background-size: cover;
+}
+
+@mixin index {
+    background-position: 50px 25px;
+    background-position: 20% 10%;
+    background-position: left top;
+    background-position: left center;
+    background-position: center center;
+    height: 514px;
+}
+
+@media only screen and (max-width:480px) {
+    main {
+        @include index;
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    main {
+        @include index;
+    }
+}
+
+/* configuraciòn de textos*/
+@mixin font1 {
+    text-align: center;
+    font-family: $fontprincipal;
+    color: $color1
+}
+
+@mixin font2 {
+    text-align: center;
+    font-family: $fontprincipal;
+    color: $color4
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $fontprincipal;
+    background-color: $color1;
+    padding: 15px;
+    font-weight: bold;
+    color: $color3;
+}
+
+h2 {
+    @include font1;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 29px;
+    text-shadow: $color4;
+}
+
+h3 {
+    @include font2;
+    text-decoration: underline;
+}
+
+h4 {
+    @include font2;
+    font-size: $font-size2;
+    background-color: $color2;
+}
+
+h5 {
+    font-size: 30px;
+    font-family: $font2;
+    text-align: center;
+    color: $color4;
+    text-decoration: underline;
+    padding-top: 15px;
+}
+
+h6 {
+    @include font1();
+    font-size: 22px;
+    color: $color4;
+    margin-top: 25px;
+}
+
+p {
+    text-align: left;
+    font-family: $fontprincipal;
+    color: $color4;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+p1 {
+    @include font2;
+    font-weight: bold;
+    font-size: $font-size2;
+}
+
+hr {
+    border: none;
+    border-top: 3px solid $color1;
+    margin: 10px;
+}
+
+/*css de la biografía*/
+
+.contenedor-biografía {
+    width: 100%;
+    overflow: hidden;
+}
+
+/*img*/
+@mixin img {
+    width: 40%;
+    height: 500px;
+    margin-top: 30px;
+    margin-bottom: $margin-bottom1;
+}
+
+/* imágen a la derecha, texto a la izquierda */
+.img-biografía1 {
+    @include img;
+    float: right;
+    margin-right: $margin-right1;
+}
+
+/* imágen a la izquierda, texto a la derecha */
+.img-biografía2 {
+    @include img;
+    float: left;
+    margin-left: $margin-left1;
+}
+
+/*texto*/
+@mixin text {
+    text-align: left;
+    margin-top: $margin-top2;
+    margin-left: $margin-left3;
+    margin-right: $margin-right3;
+    max-width: $width1;
+}
+
+/* imágen a la derecha, texto a la izquierda */
+.texto-biografía1 {
+    @include text;
+    margin-bottom: $margin-bottom1;
+}
+
+/* imágen a la izquierda, texto a la derecha */
+.texto-biografía2 {
+    @include text;
+}
+
+@mixin bio {
+    h2 {
+        font-size: $font-size1;
+        margin-left: $margin-left2;
+        margin-right: $margin-right2;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin-left: $margin-left2;
+        margin-right: $margin-right2;
+    }
+
+    p {
+        font-size: $font-size2;
+    }
+
+    .contenedor-biografía {
+        flex-direction: column;
+    }
+
+    .img-biografía1,
+    .img-biografía2 {
+        float: center;
+        margin-left: 50px;
+        margin-right: 50px;
+        width: 80%;
+        height: 80%;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    @include bio;
+}
+
+@media only screen and (min-width:480px) and (max-width:686px) {
+    @include bio;
+}
+
+/* Css de la Galería de fotos */
+
+/*shows*/
+.galeria-shows {
+    display: grid;
+    height: 1030px;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: black;
+    grid-template-rows: repeat(3, 325px);
+    grid-template-areas: "img1 img2 img3 img3"
+        "img1 img4 img5 img6"
+        "img7 img4 img8 img8";
+    grid-gap: 10px;
+    padding: 15px;
+}
+
+@media only screen and (max-width:480px) {
+    .galeria-shows {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img1 img2"
+            "img1 img5"
+            "img3 img3"
+            "img4 img6"
+            "img4 img7"
+            "img8 img8";
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:780px) {
+    .galeria-shows {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img1 img2"
+            "img1 img5"
+            "img3 img3"
+            "img4 img6"
+            "img4 img7"
+            "img8 img8";
+    }
+}
+
+.item {
+    border: 2px solid black;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+}
+
+.item1 {
+    background-image: url(./img/shhows.jpg);
+    grid-area: img1;
+}
+
+.item2 {
+    background-image: url(./img/shows.jpg);
+    grid-area: img2;
+}
+
+.item3 {
+    background-image: url(./img/show.jpg);
+    grid-area: img3;
+}
+
+.item4 {
+    background-image: url(./img/showss.jpg);
+    grid-area: img4;
+}
+
+.item5 {
+    background-image: url(./img/showimg.jpg);
+    grid-area: img5;
+}
+
+.item6 {
+    background-image: url(./img/showwws.jpg);
+    grid-area: img6;
+}
+
+.item7 {
+    background-image: url(./img/showwss.webp);
+    grid-area: img7;
+}
+
+.item8 {
+    background-image: url(./img/showdef.jpg);
+    grid-area: img8;
+}
+
+/*videoclips*/
+
+.galeria-videoclips {
+    height: 1030px;
+    width: 100%;
+    display: grid;
+    background-color: black;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 325px);
+    grid-template-areas: "img9 img9 img10 img11"
+        "img12 img13 img14 img15"
+        "img16 img13 img17 img17";
+    grid-gap: 10px;
+    padding: 15px;
+}
+
+@media only screen and (max-width:480px) {
+    .galeria-videoclips {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img9 img9"
+            "img10 img11"
+            "img13 img12"
+            "img13 img14"
+            "img15 img16"
+            "img17 img17"
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:780px) {
+    .galeria-videoclips {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img9 img9"
+            "img10 img11"
+            "img13 img12"
+            "img13 img14"
+            "img15 img16"
+            "img17 img17"
+    }
+}
+
+.item9 {
+    background-image: url(./img/vidddeoclip.jpg);
+    grid-area: img9;
+}
+
+.item10 {
+    background-image: url(./img/viideocliip.jpg);
+    grid-area: img10;
+}
+
+.item11 {
+    background-image: url(./img/vvideoclip.jpg);
+    grid-area: img11;
+}
+
+.item12 {
+    background-image: url(./img/viiddeeoocclip.jpg);
+    grid-area: img12;
+}
+
+.item13 {
+    background-image: url(./img/videoclip.jpg);
+    grid-area: img13;
+}
+
+.item14 {
+    background-image: url(./img/viiddeeoclip.jpg);
+    grid-area: img14;
+}
+
+.item15 {
+    background-image: url(./img/videooclip.jpg);
+    grid-area: img15;
+}
+
+.item16 {
+    background-image: url(./img/videooooclip\ \(2\).jpg);
+    grid-area: img16;
+}
+
+.item17 {
+    background-image: url(./img/videooooclip\ \(1\).jpg);
+    grid-area: img17;
+}
+
+/*backstage*/
+
+.galeria-backstages {
+    height: 1030px;
+    width: 100%;
+    display: grid;
+    background-color: black;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 325px);
+    grid-template-areas: "img18 img19 img20 img21"
+        "img22 img23 img24 img26"
+        "img22 img25 img25 img26";
+    grid-gap: 10px;
+    padding: 15px;
+}
+
+@media only screen and (max-width:480px) {
+    .galeria-backstages {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img18 img19"
+            "img20 img21"
+            "img22 img23"
+            "img22 img26"
+            "img24 img26"
+            "img25 img25";
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:780px) {
+    .galeria-backstages {
+        height: 1260px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 200px);
+        grid-template-areas: "img18 img19"
+            "img20 img21"
+            "img22 img23"
+            "img22 img26"
+            "img24 img26"
+            "img25 img25";
+    }
+}
+
+.item18 {
+    background-image: url(./img/back.webp);
+    grid-area: img18;
+}
+
+.item19 {
+    background-image: url(./img/bbback.webp);
+    grid-area: img19;
+}
+
+.item20 {
+    background-image: url(./img/baccck.jpg);
+    grid-area: img20;
+}
+
+.item21 {
+    background-image: url(./img/bacck.jpg);
+    grid-area: img21;
+}
+
+.item22 {
+    background-image: url(./img/bac.jpg);
+    grid-area: img22;
+}
+
+.item23 {
+    background-image: url(./img/backk.jpg);
+    grid-area: img23;
+}
+
+.item24 {
+    background-image: url(./img/backkk.jpg);
+    grid-area: img24;
+}
+
+.item25 {
+    background-image: url(./img/bback.jpg);
+    grid-area: img25;
+}
+
+.item26 {
+    background-image: url(./img/backkkk.jpg);
+    grid-area: img26;
+}
+
+/*css de discografía*/
+
+@mixin music {
+    margin-top: $margin-top1;
+    margin-bottom: $margin-bottom2;
+    margin-left: $margin-left1;
+    margin-right: $margin-right1;
+}
+
+.contenedor-álbumes {
+    @include music;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 480px) {
+    .contenedor-álbumes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .contenedor-álbumes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.contenedor-EP {
+    @include music;
+}
+
+@media (max-width: 480px) {
+    .contenedor-EP {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .contenedor-EP {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.contenedor-sencillos,
+.contenedor-colaboraciones,
+.contenedor-freestyle {
+    @include music;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+@media (max-width: 480px) {
+
+    .contenedor-sencillos,
+    .contenedor-colaboraciones,
+    .contenedor-freestyle {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+
+    .contenedor-sencillos,
+    .contenedor-colaboraciones,
+    .contenedor-freestyle {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* css de la tienda */
+.tienda {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.container-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 480px) {
+    .container-items {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:768px) {
+    .container-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.item {
+    border-radius: 10px;
+    background-color: $color1;
+
+    &:hover {
+        box-shadow: 0 10px 20px $color5;
+    }
+
+    img {
+        width: $width1;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+.info_product {
+    padding: 15px 30px;
+    margin-top: 15px;
+}
+
+/*Css del contacto*/
+
+.container {
+    display: flex;
+    background-image: linear-gradient(to right, $color1, $color7);
+    height: 700px;
+    width: 1000px;
+    box-shadow: 0 0 20px $color3 0.4;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-radius: 25px;
+}
+
+.form {
+    padding: 15px 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+form h5 {
+    color: $color3;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 15px;
+    color: $color3;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.box {
+    border: 0;
+    background-color: $color4;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    outline: none;
+}
+
+.submit {
+    background-color: $color4;
+    border: 0;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 25px;
+    width: 250px;
+    margin-top: 25px;
+    box-shadow: 0 0 20px $color5;
+
+    &:hover {
+        background-color: $color7;
+        color: $color4
+    }
+}
+
+.img {
+    width: 400px;
+    margin-top: 35px;
+    margin-bottom: 0px;
+    margin-left: 40px;
+    border-radius: 25px;
+}
+
+@mixin contacto {
+    .img {
+        display: none;
+    }
+
+    .container {
+        display: flex;
+        width: auto;
+        margin-left: $margin-left3;
+        margin-right: $margin-right3;
+    }
+
+    .form {
+        width: $width1;
+    }
+
+    .submit {
+        font-size: 15px;
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    @include contacto;
+}
+
+@media only screen and (min-width:480px) and (max-width:1009px) {
+    @include contacto;
+}
+
+/* boton subir */
+.subir {
+    height: 40px;
+    width: 40px;
+    background-color: $color1;
+    color: $color4;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    font-size: 25px;
+    line-height: 40px;
+    text-align: center;
+    box-shadow: 0 0 5px $color4;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*footer*/
+footer {
+    background-color: $color2;
+    color: $color4;
+    text-align: center;
+    padding: 20px;
+    font-size: $font-size1;
+    font-family: $fontprincipal;
+}
+@media only screen and (max-width:480px) {
+    .footer {
+        font-size: 10px;
+    }
+}
+
+.redes {
+    color: $color1;
+    font-size: 40px;
+    letter-spacing: 10px;
+}
+
+@media only screen and (max-width:480px) {
+    .redes {
+        font-size: 20px;
+        letter-spacing: 5px;
+    }
+}
