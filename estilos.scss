@@ -64,7 +64,12 @@ html {
     img {
         width: 38px;
     }
+
+    .logo {
+        cursor: pointer;
+    }
 }
+
 
 .navbar-toggler {
     border: none;
@@ -82,13 +87,13 @@ html {
 
 /*css del inicio*/
 
-main {
+.index{
     height: calc(100vh - 80px);
     width: $width1;
-    background-color: $color3;
     background-image: url(img/Diseño\ sin\ título.org.png);
     background-size: cover;
 }
+
 
 @mixin index {
     background-position: 50px 25px;
@@ -100,13 +105,13 @@ main {
 }
 
 @media only screen and (max-width:480px) {
-    main {
+    .index {
         @include index;
     }
 }
 
 @media only screen and (min-width:480px) and (max-width:768px) {
-    main {
+    .index {
         @include index;
     }
 }
@@ -120,6 +125,7 @@ h1 {
     padding: 15px;
     font-weight: bold;
     color: $color3;
+    margin-bottom: 0px;
 }
 
 h2 {
@@ -127,62 +133,62 @@ h2 {
     text-decoration: underline;
     text-transform: uppercase;
     font-size: 29px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(153, 31, 209);
-    text-shadow: #fff;
+    font-family: $fontprincipal;
+    color: $color1;
+    text-shadow: $color4;
 }
 
 h3 {
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
+    font-family: $fontprincipal;
+    color: $color4;
     text-decoration: underline;
 }
 
 h4 {
-    font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: $font-size2;
+    font-family: $fontprincipal;
     text-align: center;
-    color: #fff;
-    background-color: rgb(20, 20, 20);
+    color: $color4;
+    background-color: $color2;
 }
 
 h5 {
     font-size: 30px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: $font2;
     text-align: center;
-    color: #fff;
+    color: $color4;
     text-decoration: underline;
     padding-top: 15px;
 }
 
 h6 {
     font-size: 22px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: $fontprincipal;
     text-align: center;
-    color: #fff;
-    background-color: rgb(153, 31, 209);
+    color: $color4;
+    background-color: $color1;
     margin-top: 25px;
 }
 
 p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: $fontprincipal;
     font-weight: bold;
-    color: #fff;
+    color: $color4;
     font-size: 16px;
 }
 
 p1 {
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: $fontprincipal;
     font-weight: bold;
-    color: #fff;
-    font-size: 12px;
+    color: $color4;
+    font-size: $font-size2;
 }
 
 hr {
     border: none;
-    border-top: 3px solid rgb(153, 31, 209);
+    border-top: 3px solid $color1;
     margin: 10px;
 }
 
@@ -202,17 +208,19 @@ hr {
 }
 
 /* imágen a la derecha, texto a la izquierda */
+
 .img-biografía1 {
     @include img;
     float: right;
     margin-right: $margin-right1;
 }
 
+
 /* imágen a la izquierda, texto a la derecha */
 .img-biografía2 {
     @include img;
-    float: left;
     margin-left: $margin-left1;
+    float: left;
 }
 
 /*texto*/
@@ -447,6 +455,7 @@ footer {
     font-size: $font-size1;
     font-family: $fontprincipal;
 }
+
 @media only screen and (max-width:480px) {
     .footer {
         font-size: 10px;
